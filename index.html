@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10 | Farewell Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <h1 class="glitch">CLASS 10 MEMORIES</h1>
+            <div class="progress-wrapper"><div id="progress-bar"></div></div>
+            <button id="enter-btn" class="hidden">START EXPERIENCE</button>
+            <p id="creator-tag" class="hidden">(made by Dixit Sinha)</p>
+        </div>
+    </div>
+
+    <!-- Intro Slideshow (3 items only) -->
+    <div id="intro-slideshow" class="hidden">
+        <div id="slideshow-container"></div>
+    </div>
+
+    <!-- 3D Globe Container -->
+    <div id="canvas-container"></div>
+
+    <!-- UI Layer -->
+    <div id="ui-layer" class="hidden">
+        <div class="glass-header">
+            <h2>OUR JOURNEY</h2>
+            <p>Drag to Rotate • Click any Memory to View</p>
+        </div>
+    </div>
+
+    <!-- Lightbox (The Popup Fix) -->
+    <div id="lightbox" class="hidden">
+        <!-- Overlay specifically for closing when clicking outside -->
+        <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+        <div class="lightbox-wrapper">
+            <span class="close-btn" onclick="closeLightbox()">&times;</span>
+            <div id="media-holder"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

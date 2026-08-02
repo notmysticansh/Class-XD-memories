@@ -1,0 +1,62 @@
+:root { --bg: #050505; --accent: #007aff; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: white; font-family: 'Poppins', sans-serif; overflow: hidden; width: 100vw; height: 100vh; }
+
+/* Center Loader & Button */
+#loader { position: fixed; inset: 0; background: #000; display: flex; justify-content: center; align-items: center; z-index: 999999; }
+.loader-content { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.progress-wrapper { width: 250px; height: 3px; background: rgba(255,255,255,0.1); margin: 25px 0; border-radius: 10px; }
+#progress-bar { width: 0%; height: 100%; background: var(--accent); box-shadow: 0 0 20px var(--accent); transition: width 0.3s; }
+#enter-btn { background: var(--accent); border: none; color: white; padding: 14px 40px; border-radius: 50px; cursor: pointer; font-family: 'Montserrat'; font-weight: bold; font-size: 1rem; }
+/* Creator Tag */
+#creator-tag {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5); /* Thoda halka white taaki premium lage */
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+/* Intro Slideshow */
+#intro-slideshow { position: fixed; inset: 0; z-index: 800000; background: #000; }
+.slide { position: absolute; inset: 0; opacity: 0; display: flex; justify-content: center; align-items: center; }
+.slide img, .slide video { max-width: 85%; max-height: 85%; object-fit: contain; }
+
+/* Canvas Area */
+#canvas-container { position: fixed; inset: 0; z-index: 1; pointer-events: all; }
+
+/* Header UI */
+#ui-layer { position: fixed; top: 20px; width: 100%; z-index: 1000; pointer-events: none; display: flex; justify-content: center; }
+.glass-header { background: rgba(0,0,0,0.5); backdrop-filter: blur(20px); padding: 15px 40px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
+
+/* LIGHTBOX - THE FIX */
+#lightbox { 
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100vw; height: 100vh; 
+    z-index: 99999999 !important; /* Extremely high to stay on top */
+    display: none; 
+    justify-content: center; 
+    align-items: center; 
+}
+#lightbox.active { display: flex !important; }
+.lightbox-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); }
+.lightbox-wrapper { 
+    position: relative; 
+    z-index: 100000000; 
+    max-width: 90%; max-height: 85%; 
+    transform: scale(0.8); opacity: 0; 
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+}
+#lightbox.active .lightbox-wrapper { transform: scale(1); opacity: 1; }
+.close-btn { position: absolute; top: -60px; right: 0; font-size: 60px; color: white; cursor: pointer; line-height: 1; }
+
+#media-holder { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+#media-holder img, #media-holder video { 
+    max-width: 100%; max-height: 80vh; 
+    border-radius: 10px; 
+    box-shadow: 0 0 50px rgba(0,0,0,1); 
+    border: 1px solid rgba(255,255,255,0.15); 
+}
+
+.hidden { display: none !important; }
